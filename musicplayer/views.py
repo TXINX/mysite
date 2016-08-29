@@ -6,7 +6,7 @@ from .models import Song
 
 def musicplayer(request):
     #songs=get_object_or_404(Song)
-    template=loader.get_template('music.html')
+    template=loader.get_template('mainPage.html')
     context={
         'song_audio_file_url':'musics/you.mp3'
     }
