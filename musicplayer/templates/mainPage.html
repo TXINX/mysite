@@ -24,11 +24,32 @@
         <h3 style="text-align:center"></h3>
         <h6 style="text-align:center"><a href="">竜神の剣を喰らえ</h6>
     <div style="text-align:center">
-        <audio controls autoplay>
+        <audio id='musicplayer'controls autoplay>
             {% load staticfiles %}
             <source src="{% static 'musics/ParadisusParadoxum.mp3' %}" type="audio/mpeg">
         </audio>
+
     </div>
+
+
+
+<script>
+mp=document.getElementById("musicplayer");
+function getVolume()
+{
+    alert(mp.volume);
+}
+function setHalfVolume()
+{ 
+    mp.volume=0.4;
+}
+setTimeout(setHalfVolume,0.1) 
+function setFullVolume()
+{ 
+    mp.volume=1.0;
+}
+</script> 
+
 
 </body>
 </html>
