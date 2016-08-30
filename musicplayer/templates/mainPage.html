@@ -14,23 +14,41 @@
         position:absolute;
         bottom:150px
     }
+    p.thicker {font-weight: 9000}
     </style>
 </head>
 <body>
-    <div>
+    <div class="page_header">
+        <p class="thicker">
         <h1 style="text-align:center"><a href="">踢叉叉 喵喵喵喵喵</a></h1>
-        <h3 style="text-align:center"><a href="/blog">Blogs,GO!</h3>
-        <h3 style="text-align:right"><a href="https://github.com/TX-QAQ">我的Github</h3>
-        <h3 style="text-align:center"></h3>
-        <h3 style="text-align:center"></h3>
-        <h3 style="text-align:center"><a href="">龟神が我が敌を喰らう</h3>
-        <h3 style="text-align:center"></h3>
-        <h3 style="text-align:center"></h3>
-        <h6 style="text-align:center"><a href="">竜神の剣を喰らえ</h6>
+        </p>
+    </div>
+
+
+    <div style="background:#CCC; width:100%; ">
+        <h3 style="float:right"><a href="https://github.com/TX-QAQ">我的Github</h3>
+           
+    </div>
+    <hr />
+    <h3 style="text-align:center"><a href="/blog">Blogs,GO!</h3>
+
+
+
+
+
+
+
+    <h3 style="text-align:center"></h3>
+    <h3 style="text-align:center"></h3>
+    <h3 style="text-align:center"><a href="">龟神が我が敌を喰らう</h3>
+    <h3 style="text-align:center"></h3>
+    <h3 style="text-align:center"></h3>
+    <h6 style="text-align:center"><a href="">竜神の剣を喰らえ</h6>
+
     <div style="text-align:center">
         <audio id='musicplayer'controls autoplay>
             {% load staticfiles %}
-            <source src="{% static 'musics/ParadisusParadoxum.mp3' %}" type="audio/mpeg">
+            <source src="{% static 'musics/LaCampanella.mp3' %}" type="audio/mpeg">
         </audio>
 
     </div>
@@ -45,7 +63,7 @@ function getVolume()
 }
 function setHalfVolume()
 { 
-    mp.volume=0.4;
+    mp.volume=1;
 }
 setTimeout(setHalfVolume,0.1) 
 function setFullVolume()
