@@ -4,4 +4,5 @@ myvenv
 db.sqlite3
 .DS_Store
 .mp3
+.png
 static/**
