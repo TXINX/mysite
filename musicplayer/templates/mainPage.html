@@ -2,35 +2,30 @@
 {% load staticfiles %}
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Σ(っ ° Д °;)っ踢叉喵!!!∑(° Д° ノ)ノ </title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/musicplayer.css' %}">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <style type="text/css">
-    h2.pos_abs
-    {
-        position:absolute;
-        bottom:150px
-    }
-    p.thicker {font-weight: 9000}
-    </style>
+<meta charset="utf-8">
+<title>Σ(っ ° Д °;)っ踢叉喵!!!∑(° Д° ノ)ノ </title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/musicplayer.css' %}">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<style type="text/css">
+h2.pos_abs
+{
+    position:absolute;
+    bottom:150px
+}
+p.thicker {font-weight: 9000}
+</style>
 </head>
 <body>
-    <div class="page_header">
-        <p class="thicker">
-        <h1 style="text-align:center"><a href="">踢叉叉 喵喵喵喵喵</a></h1>
-        </p>
-    </div>
+<div class="page_header">
+    <p class="thicker">
+    <h1 style="text-align:center"><a href="">踢叉叉 喵喵喵喵喵</a></h1>
+    </p>
+</div>
 
 
-    <div style="background:#CCC; width:100%; ">
-        <h3 style="float:right"><a href="https://github.com/TX-QAQ">我的Github</h3>
-           
-    </div>
-    <hr />
-    <h3 style="text-align:center"><a href="/blog">Blogs,GO!</h3>
+<h3 style="text-align:center;"><a href="/blog">Blogs,GO!</h3>
 
 
 
@@ -38,20 +33,27 @@
 
 
 
-    <h3 style="text-align:center"></h3>
-    <h3 style="text-align:center"></h3>
-    <h3 style="text-align:center"><a href="">龟神が我が敌を喰らう</h3>
-    <h3 style="text-align:center"></h3>
-    <h3 style="text-align:center"></h3>
-    <h6 style="text-align:center"><a href="">竜神の剣を喰らえ</h6>
+<h3 style="text-align:center"></h3>
+<h3 style="text-align:center"></h3>
+<h3 style="text-align:center"><a href="">龟神が我が敌を喰らう</h3>
+<h3 style="text-align:center"></h3>
+<h3 style="text-align:center"></h3>
+<h6 style="text-align:center"><a href="">竜神の剣を喰らえ</h6>
 
-    <div style="text-align:center">
-        <audio id='musicplayer'controls autoplay>
-            {% load staticfiles %}
-            <source src="{% static 'musics/LaCampanella.mp3' %}" type="audio/mpeg">
-        </audio>
+<div style="text-align:center">
+    <audio id='musicplayer'controls autoplay>
+        {% load staticfiles %}
+        <source src="{% static 'musics/LaCampanella.mp3' %}" type="audio/mpeg">
+    </audio>
 
-    </div>
+</div>
+
+
+<div style="float:right;clear:both;">
+<a href="https://github.com/TX-QAQ">
+    <img border="0" src="{% static 'pics/github.png' %}" />
+</a>
+</div>
 
 
 
