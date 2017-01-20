@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1','10.251.123.60']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
-    'musicplayer.apps.MusicplayerConfig',
+    'main_page.apps.MainPageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +50,12 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+#added by whitenoise //this causes error 500
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -120,8 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
