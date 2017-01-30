@@ -6,4 +6,5 @@ db.sqlite3
 *.mp3
 /static/*
 !/static/templates
+!/static/pics
 staticfiles/
