@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ta+$u2av^tj^5-hbg6sk6t%6q!ufe=-gni-23zib-l3!ymg(67'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','10.251.123.60','192.168.100.22']
+ALLOWED_HOSTS = ['*']#['127.0.0.1', 'localhost', '10.251.123.60', '192.168.100.22']
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE_CLASSES = [
 #added by whitenoise //this causes error 500
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+#COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 
 ROOT_URLCONF = 'mysite.urls'
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + "/static/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
