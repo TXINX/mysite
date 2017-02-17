@@ -19,16 +19,6 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-h2.pos_abs
-{
-    position:absolute;
-    bottom:150px
-}
-p.thicker {font-weight: 9000}
-</style>
-
-<style>
-
 body
 {
     background-image:url({% static 'pics/background.jpg' %});
@@ -51,15 +41,15 @@ body
 			<nav class="navbar navbar-default" role="navigation">				
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-					 <a class="navbar-brand" href=""><span class="glyphicon glyphicon-home"></span> 这是一个超级长而且没有什么用的标签头</a>
+					 <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> 这是一个超级长而且没有什么用的标签头</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							 <a href="blog/">Blogs</a>
+							 <a href="/blog/">Blogs</a>
 						</li>
 						<li>
-							 <a href="">主页走你</a>
+							 <a href="/">主页走你</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">点一下啊<strong class="caret"></strong></a>
@@ -100,35 +90,10 @@ body
 
 {% endblock %}
 
-<div class="page_header">
-    <p class="thicker">
-    <h1 style="text-align:center"><a href="">踢叉叉 喵喵喵喵喵</a></h1>
-    <h1 style="text-align:center"><a href="">Σ(っ ° Д °;)っ踢叉喵!!!∑(° Д° ノ)ノ</a></h1>
-    
-    </p>
-</div>
-
 {% block text %}
 
 {% endblock %}
 </div>
-
-
-<h3 style="text-align:center;"><a href="/blog">Blogs,GO!</h3>
-
-
-
-
-
-
-
-<h3 style="text-align:center"></h3>
-<h3 style="text-align:center"></h3>
-<h3 style="text-align:center"><a href="">竜が我が敌を喰らう</h3>
-<h3 style="text-align:center"></h3>
-<h3 style="text-align:center"></h3>
-<h6 style="text-align:center"><a href="">龟神の剣を喰らえ</h6>
-
 
 <!--<div style="text-align:center">
     <audio id='musicplayer'controls autoplay>
@@ -138,13 +103,20 @@ body
 
 </div>-->
 
-
-<div style="float:right;clear:both;">
-<a href="https://github.com/TX-QAQ">
-    <img border="0" src="{% static 'pics/github.png' %}" />
-</a>
+<div class="container">
+	<div style="float:right;clear:both;">
+		<a href="https://github.com/TX-QAQ">
+			<img border="0" src="{% static 'pics/github.png' %}" />
+		</a>
+	</div>
 </div>
+<link rel="stylesheet" type="text/css" href = {% static 'css/footer.css' %}>
 
+<div id="footer">
+	<div class="container">
+	<p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+	</div>
+</div>
 
 
 <script>

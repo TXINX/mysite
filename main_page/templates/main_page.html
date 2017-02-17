@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% block jumbotron %}
+
 <div class="jumbotron">
 	<h1>
 		Hello, world!
@@ -14,7 +16,52 @@
 {% endblock %}
 
 {% block text %}
-
+			<a class="btn" href="#">Learn more</a>
+<div class="row clearfix">
+				<a class="btn" href="#">Learn more</a>
+    {% for post in posts %}
+        <div class="col-md-4 column">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p class="text-right">
+			<a class="btn" href="#">Learn more</a>
+	        </p>
+        </div>
+    {% endfor %}
+	<div class="col-md-4 column">
+		<h2>
+			Heading
+		</h2>
+		<p>
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		</p>
+		<p>
+				<a class="btn" href="#">View details »</a>
+		</p>
+	</div>
+	<div class="col-md-4 column">
+		<h2>
+			Heading
+		</h2>
+		<p>
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		</p>
+		<p>
+				<a class="btn" href="#">View details »</a>
+		</p>
+	</div>
+	<div class="col-md-4 column">
+		<h2>
+			Heading
+		</h2>
+		<p>
+			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		</p>
+		<p>
+				<a class="btn" href="#">View details »</a>
+		</p>
+	</div>
+</div>
 <div class="row clearfix">
 	<div class="col-md-4 column">
 		<h2>
@@ -27,33 +74,12 @@
 				<a class="btn" href="#">View details »</a>
 		</p>
 	</div>
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-</div>
-<div style="text-align:center">
+{% comment %}<div style="text-align:center">
     <audio id='musicplayer'controls autoplay>
         <!--{% load staticfiles %}-->		
 		<source src="{%static '' %}{{song_audio_file_url}}" type="audio/mpeg">
     </audio>
+</div>{% endcomment %}
 </div>
+
 {% endblock %}
