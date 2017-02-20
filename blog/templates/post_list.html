@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
+    <a class="btn btn-primary btn-large" href="/re">Learn more</a>
 {% block jumbotron %}
+    <a class="btn btn-primary btn-large" href="/blog/re">更新一下</a>
     {% for post in posts %}
         <div class="jumbotron">
             <p class="text-right">published at: {{ post.published_date }}</p>

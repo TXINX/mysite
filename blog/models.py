@@ -1,11 +1,11 @@
+#coding=utf-8
 from django.db import models
 from django.utils import timezone
 
 
 class Article(models.Model):
-    identity = models.PositiveIntegerField()
     author = models.ForeignKey('auth.User')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, default='无标题')
     text = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
 
