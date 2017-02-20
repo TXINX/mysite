@@ -3,8 +3,7 @@
 import os
 from models import Article
 
-
-PATH = r"E:\Projects\mysite\trunk\test\docs"
+PATH = r"E:\Github\mysite\test\docs"
 
 def if_is_property(str_):
     'check if the string is a formated property and return a list if True'
@@ -13,7 +12,6 @@ def if_is_property(str_):
     return match('^(' + property_patterns + r')\s?=\s?(.*)\s', str_)
 
 def convert_all(user,path=PATH):
-    #test
     'convert all files in the directory of " path" into string'
     file_names = os.listdir(path)
     full_paths = (PATH + "/" + filename for filename in file_names)
@@ -26,11 +24,11 @@ def convert_all(user,path=PATH):
             line = file_.readline()
             match = if_is_property(line)
             if match:
-                print 'test'
-                print match.groups()
                 article.__dict__[match.group(1)] = match.group(2)
             else:
                 break
+        if article.if_exist():
+            continue
         article.text = line + file_.read()
         #if article.author is None:
         article.author = user
