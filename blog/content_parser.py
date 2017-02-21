@@ -5,7 +5,7 @@ from models import Article
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-PATH = os.path.join(BASE_DIR, r'test\docs')#r"E:\Github\mysite\test\docs"
+PATH = os.path.join(BASE_DIR, r'test/docs')#r"E:\Github\mysite\test\docs"
 
 def if_is_property(str_):
     'check if the string is a formated property and return a list if True'
