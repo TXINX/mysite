@@ -3,7 +3,9 @@
 import os
 from models import Article
 
-PATH = r"E:\Github\mysite\test\docs"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+PATH = os.path.join(BASE_DIR, r'test\docs')#r"E:\Github\mysite\test\docs"
 
 def if_is_property(str_):
     'check if the string is a formated property and return a list if True'
@@ -11,10 +13,10 @@ def if_is_property(str_):
     from re import match
     return match('^(' + property_patterns + r')\s?=\s?(.*)\s', str_)
 
-def convert_all(user,path=PATH):
+def convert_all(user, path=PATH):
     'convert all files in the directory of " path" into string'
     file_names = os.listdir(path)
-    full_paths = (PATH + "/" + filename for filename in file_names)
+    full_paths = (os.path.join(path, filename) for filename in file_names)
     #之前把article的初始化写在外面，结果隐含的pk值没有改变，所以后面的文章把前面的覆盖掉了
     for path in full_paths:
         file_ = open(path, 'r')
