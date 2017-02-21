@@ -1,11 +1,10 @@
 'empty'
 import os
 
-# def file_names():
-#     return os.listdir('../static/musics')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# def full_paths():
-#     return ('musics/' + filename for filename in file_names())
+PATH = os.path.join(BASE_DIR, r'static\musics')#r"E:\Github\mysite\test\docs"
 
-# for item in full_paths():
-#     print item
+def full_paths():
+    music_names = os.listdir(PATH)
+    return [os.path.join('musics', filename) for filename in music_names]

@@ -17,53 +17,5 @@
 
 
 {% block text %}
-    {% for post in posts %}
-        <div class="jumbotron">
-            <p class="text-right">published at: {{ post.published_date }}</p>
-            <h1 class="text-center"><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <p class="text-right">
-			<a class="btn btn-primary btn-large" href="#">Learn more</a>
-	        </p>
-        </div>
-
-    {% endfor %}
-			<a class="btn" href="#">Learn more1111111</a>
-<div class="row clearfix">
-				<a class="btn" href="#">Learn more222222</a>
-    {% for post in posts %}
-    <a class="btn" href="#">Learn more222222</a>
-        <div class="col-md-4 column">
-            <h2>
-                Heading
-            </h2>
-            <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            </p>
-            <p>
-                    <a class="btn" href="#">View details »</a>
-            </p>
-        </div>
-    {% endfor %}
-    {% for post in posts %}
-        <div class="col-md-4 column">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <p class="text-right">
-			<a class="btn" href="#">Learn more</a>
-	        </p>
-        </div>
-    {% endfor %}
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
 
 {% endblock %}

@@ -19,7 +19,7 @@
 {% block text %}
 
     {% for post in others %}
-        <div class="col-md-4 column">
+        <div class="col-md-3 column">
             <h2>{{ post.title }}</h2>
             <p>{{ post.text|linebreaksbr }}</p>
             <p class="text-right">
@@ -27,58 +27,13 @@
 	        </p>
         </div>
     {% endfor %}
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-</div>
-<div class="row clearfix">
-	<div class="col-md-4 column">
-		<h2>
-			Heading
-		</h2>
-		<p>
-			Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		</p>
-		<p>
-				<a class="btn" href="#">View details »</a>
-		</p>
-	</div>
-{% comment %}<div style="text-align:center">
+<div class="col-md-12 column">
+<div style="text-align:center">
     <audio id='musicplayer'controls autoplay>
         <!--{% load staticfiles %}-->		
 		<source src="{%static '' %}{{song_audio_file_url}}" type="audio/mpeg">
     </audio>
-</div>{% endcomment %}
+</div>
 </div>
 
 {% endblock %}

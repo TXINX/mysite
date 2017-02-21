@@ -11,8 +11,13 @@ def main_page(request):
     template = loader.get_template('main_page.html')
     articles = list(reversed(Article.objects.order_by('published_date')))
     #latest = Article.objects.order_by('published_date')[0]
+    musics = file_path.full_paths()
+    print musics
+    import random
+    music = random.choice(musics)
+    print music
     context = {
-        'song_audio_file_url': "musics/you.mp3",
+        'song_audio_file_url': music,
         'latest' : articles[0],
         'others' : articles[1:]
 
