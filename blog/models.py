@@ -14,7 +14,6 @@ class Article(models.Model):
         self.save()
 
     def if_exist(self):
-        print self.title
         article = Article.objects.filter(title=self.title)
         return bool(article)
 
