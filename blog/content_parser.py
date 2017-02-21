@@ -13,13 +13,13 @@ def if_is_property(str_):
     from re import match
     return match('^(' + property_patterns + r')\s?=\s?(.*)\s', str_)
 
-def convert_all(user, path=PATH):
+def convert_all(user, path_=PATH):
     'convert all files in the directory of " path" into string'
-    file_names = os.listdir(path)
-    full_paths = (os.path.join(path, filename) for filename in file_names)
+    file_names = os.listdir(path_)
+    full_paths = (os.path.join(path_, filename) for filename in file_names)
     #之前把article的初始化写在外面，结果隐含的pk值没有改变，所以后面的文章把前面的覆盖掉了
-    for path in full_paths:
-        file_ = open(path, 'r')
+    for paath in full_paths:
+        file_ = open(paath, 'r')
         article = Article()
         line = ''
         while True:
