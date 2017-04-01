@@ -8,3 +8,4 @@ db.sqlite3
 !/static/templates
 #/static/pics
 staticfiles/
+/mysite/settings.py
