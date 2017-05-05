@@ -1,7 +1,8 @@
 'empty'
 import os
+from django.conf import settings
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = settings.BASE_DIR
 
 PATH = os.path.join(BASE_DIR, r'static/musics')#r"E:\Github\mysite\test\docs"
 
