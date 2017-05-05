@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{%load post_tags%}
+{% block jumbotron %}
+    <!--<a class="btn btn-primary btn-large" href="/blog/re">更新一下</a>-->
+
+        <div class="jumbotron">
+            <p class="text-right">发布于 {{ post.published_date }}</p>
+            <h1 class="text-center"><a href="{% url 'blog:detail' post.pk %}">{{ post.title }}</a></h1>
+            <div>分类:
+                {% for item in zz %}
+               	    <a class="btn btn-primary btn-large" href="">{{item.name}}</a>
+                {% endfor %}
+	        </div>
+            <p>{{ post.text|indent|linebreaks|indent }}</p>
+
+
+        </div>
+
+
+{% endblock %}
+
+
+{% block text %}
+
+{% endblock %}

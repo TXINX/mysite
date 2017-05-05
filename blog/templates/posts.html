@@ -1,13 +1,18 @@
 {% extends "base.html" %}
+{%load post_tags%}
 {% block jumbotron %}
     <a class="btn btn-primary btn-large" href="/blog/re">更新一下</a>
     {% for post in posts %}
         <div class="jumbotron">
-            <p class="text-right">发布于 {{ post.published_date }}</p>
+            <p class="text-right">发布于 {{ post.published_date|date:"M d Y" }}</p>
             <h1 class="text-center"><a href="{% url 'blog' %}{{post.id}}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <p class="text-right">
+            <p>{{ post.text|abstract|indent|linebreaks }}</p>
+            
+            <div class="text-right">
 			<a class="btn btn-primary btn-large" href="#">Learn more</a>
+	        </div>
+            <p class="text-right">
+			{{now}}
 	        </p>
         </div>
 
@@ -16,5 +21,4 @@
 
 
 {% block text %}
-
 {% endblock %}

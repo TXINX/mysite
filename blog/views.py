@@ -1,27 +1,43 @@
+#coding=utf8
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
-from music_player import file_path
-from .models import Article
+from django.views.generic import ListView,DetailView,View
+
+from music_player import files 
+from .models import Article,Tag
 from .content_parser import convert_all
 
-def posts(request):
-    articles = reversed(Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date'))
-    return render(request, 'posts.html', {'posts': articles})
 
-def post(request,index=-1):
-    if index == -1:
-        return 'what the hell?'
-    article = get_object_or_404(Article, pk=index)
-    return render(request, 'posts.html', {'posts' : [article,]})
-def refresh(request):
-    convert_all(request.user)
-    return post_list(request)
+#import markdown2
 
-def main_page(request):
+class ArticleListView(ListView):
+    model = Article
+    ordering = ['author','-published_date',]
+    template_name = "posts.html"
+    context_object_name = "posts"
+    def get_context_data(self, **kwargs):
+        context = super(ArticleListView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = "post.html"
+    context_object_name = "post"
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        context['zz'] = Tag.objects.all()
+        return context
+
+# def refresh(request):
+#     convert_all(request.user)
+#     return posts(request)
+
+def mainpage(request):
     'render mainpage'
     articles = list(reversed(Article.objects.order_by('published_date')))
-    musics = file_path.full_paths()
+    musics = files.full_paths()
 
     import random
     music = random.choice(musics)
@@ -33,4 +49,16 @@ def main_page(request):
         'others' : articles[1:]
     }
     return render(request, 'main_page.html', context)
-    #return HttpResponse(template.render(context, request))
+
+
+def search(request):
+    q = request.GET.get('q', '')
+
+    if q.startswith("GrandOrder:"):
+        print q
+        order = q[11:]
+        print order
+    return ArticleListView.as_view()(request)
+
+
+

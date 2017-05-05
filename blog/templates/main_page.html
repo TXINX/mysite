@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{%load post_tags%}
 {% block jumbotron %}
 
 <div class="jumbotron">
@@ -7,9 +7,8 @@
 		{{ latest.title }}
 	</h1>
 	<p>
-		{{ latest.text }}
+		{{ latest.text|linebreaks }}
 	</p>
-	<p> .</p>
 	<p class="text-right">
 			<a class="btn btn-primary btn-large" href="#">Learn more</a>
 	</p>
@@ -21,9 +20,9 @@
     {% for post in others %}
         <div class="col-md-3 column">
             <h2>{{ post.title }}</h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.text|abstract|linebreaks }}</p>
             <p class="text-right">
-			<a class="btn" href="#">Learn more</a>
+			<a class="btn" href="{% url 'blog:detail' post.pk %}">Learn more</a>
 	        </p>
         </div>
     {% endfor %}

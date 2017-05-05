@@ -3,8 +3,9 @@ from . import views
 
 urlpatterns =\
 [
-    url(r'^blog/$', views.posts, name='blog'),
-    url(r'^re/$', views.refresh, name='refresh'),
-    url(r'^$', views.main_page, name='index'),
-    url(r'^blog/(?P<index>[0-9]*)/$', views.post, name='blog'),
+    url(r'^$', views.mainpage, name='mainpage'),
+    url(r'^blog/$', views.ArticleListView.as_view(), name='blog'),
+    url(r'^blog/(?P<pk>[0-9]+)/$', views.ArticleDetailView.as_view(), name="detail"),
+    url(r'^blog/search/$', views.search, name='search'),
+
 ]
