@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <p class="text-right">发布于 {{ post.published_date|date:"M d Y" }}</p>
             <h1 class="text-center"><a href="{% url 'blog' %}{{post.id}}">{{ post.title }}</a></h1>
-            <p>{{ post.text|abstract|indent|linebreaks }}</p>
+            <p>{{ post.text|abstract|linebreaks }}</p>
             
             <div class="text-right">
 			<a class="btn btn-primary btn-large" href="#">Learn more</a>
