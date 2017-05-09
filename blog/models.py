@@ -12,7 +12,7 @@ class Article(models.Model):
     #author = models.ForeignKey('auth.User')
     author = models.CharField(max_length=50, default='踢叉叉')
     title = models.CharField(max_length=200, default='无标题')
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     text = models.TextField("正文")
     published_date = models.DateTimeField("发布时间", auto_now_add=True)
     last_modified_date = models.DateTimeField('最后一次修改时间', auto_now=True)
